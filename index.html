@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Joe's Hotdogs</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div class="heading">
+      <h1>Joe's Hotdogs</h1>
+      <h5>Just tell us how much, and we'll calculate the rest</h5>
+    </div>
+    <div class="main-body">
+      <h2>Your total price:</h2>
+      <script>
+        let dogPrice = 4.25;
+        let friesPrice = 2.60;
+        let drinkPrice = 1.50;
+
+        numDogs = parseInt(prompt("How many hotdogs do you want? ($4.25/hotdog)", 0));
+        numFries = parseInt(prompt("How many fries do you want? ($2.60/fry", 0));
+        numDrink = parseInt(prompt("How many drinks do you want? ($1.50/drink", 0));
+
+        subTotal = ((numDogs * dogPrice) + (numFries * friesPrice) + (numDrink * drinkPrice)).toFixed(2);
+
+        discount = 0;
+        if (subTotal >= 20) {
+          discount = (subTotal * 0.1).toFixed(2);
+        }
+
+        document.write("Hotdogs ordered: " + numDogs);
+        document.write("<br/>");
+        document.write("Fried ordered: " + numFries);
+        document.write("<br/>");
+        document.write("Drinks ordered: " + numDrink);
+        document.write("<br/>");
+        document.write("<br/>");
+        document.write("Total cost of hotdogs: $" + (numDogs * dogPrice).toFixed(2));
+        document.write("<br/>");
+        document.write("Total cost of fries: $" + (numFries * friesPrice).toFixed(2));
+        document.write("<br/>");
+        document.write("Total cost of drinks: $" + (numDrink * drinkPrice).toFixed(2));
+        document.write("<br/>");
+        document.write("<br/>");
+        document.write("Subtotal: $" + subTotal);
+        document.write("<br/>");
+        document.write("Discount: $" + discount);
+        document.write("<br/>");
+        document.write("Subtotal with discount: $" + (subTotal - discount).toFixed(2));
+        document.write("<br/>");
+        document.write("Massachusetts Tax: 6.25%");
+        document.write("<br/>");
+        subTotal -= discount;
+        totalCost = (subTotal + (subTotal * .0625)).toFixed(2);
+        document.write("Total Cost: $" + totalCost);
+      </script>
+    </div>
+
+    <div class="footer"></div>
+  </body>
+</html>
